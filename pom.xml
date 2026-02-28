@@ -105,6 +105,7 @@
   </issueManagement>
 
   <properties>
+    <sonar.organization>0xm4gn0-1</sonar.organization>
     <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
     <sonar.skip>true</sonar.skip>
     <!-- Shared properties with plugins and version numbers across submodules-->
