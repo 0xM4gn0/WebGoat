@@ -46,6 +46,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   private final UserService userDetailsService;
 
+    @Autowired
+    public void setUserDetailsService(UserService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry security =
