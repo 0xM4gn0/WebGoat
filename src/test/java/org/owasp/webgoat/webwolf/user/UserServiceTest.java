@@ -70,9 +70,8 @@ public class UserServiceTest {
   public void testAddUser() {
     var username = "guest";
     var password = "guest";
-
+    when(passwordEncoder.encode(password)).thenReturn("hashedPassword"); //nueva línea
     sut.addUser(username, password);
-
     verify(mockUserRepository, times(1)).save(any(WebGoatUser.class));
   }
 }
