@@ -35,12 +35,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder; //nueva línea
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
 
   @Mock private UserRepository mockUserRepository;
-
+  @Mock private BCryptPasswordEncoder passwordEncoder;  //nueva línea
   @InjectMocks private UserService sut;
 
   @Test
