@@ -40,17 +40,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /** Security configuration for WebGoat. */
 @Configuration
-@AllArgsConstructor
+
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+  @AllArgsConstructor
   private final UserService userDetailsService;
-
-    @Autowired
-    public void setUserDetailsService(UserService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
-
+  
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry security =
